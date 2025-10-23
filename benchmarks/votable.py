@@ -8,6 +8,7 @@ np.random.seed(42)
 rng = np.random.default_rng(42)
 
 SMALL_SIZE = 1000
+MEDIUM_SIZE = 50000
 LARGE_SIZE = 200000
 
 ra_data = np.random.uniform(0, 360, LARGE_SIZE).astype(np.float32)
@@ -193,13 +194,13 @@ class TimeVOTableBitArrayOptimization:
     def setup(self):
         table = Table(
             {
-                "ra": ra_data[:LARGE_SIZE],
-                "dec": dec_data[:LARGE_SIZE],
-                "mag": mag_data[:LARGE_SIZE],
-                "detected": rng.integers(0, 2, LARGE_SIZE).astype(bool),
-                "saturated": rng.integers(0, 2, LARGE_SIZE).astype(bool),
-                "edge_pixel": rng.integers(0, 2, LARGE_SIZE).astype(bool),
-                "cosmic_ray": rng.integers(0, 2, LARGE_SIZE).astype(bool),
+                "ra": ra_data[:MEDIUM_SIZE],
+                "dec": dec_data[:MEDIUM_SIZE],
+                "mag": mag_data[:MEDIUM_SIZE],
+                "detected": rng.integers(0, 2, MEDIUM_SIZE).astype(bool),
+                "saturated": rng.integers(0, 2, MEDIUM_SIZE).astype(bool),
+                "edge_pixel": rng.integers(0, 2, MEDIUM_SIZE).astype(bool),
+                "cosmic_ray": rng.integers(0, 2, MEDIUM_SIZE).astype(bool),
             }
         )
 
